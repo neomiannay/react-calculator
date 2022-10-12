@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    margin: 2rem;
+    /* margin: 2rem; */
     background: #0D0C1D;
     color: #EFFFFA;;
     font-family: system-ui;

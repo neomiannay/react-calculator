@@ -1,6 +1,9 @@
 import { useState, useEffect, useReducer } from 'react'
 
+import Title from './Title';
 import Bouton from './Bouton';
+import { CalculatorElement, NumKeypad } from '../Styles/Calculator';
+import Credits from './Credits';
 
 const ADD = "+";
 const MINUS = "-";
@@ -66,11 +69,18 @@ function Calculator(props) {
     }
 
     return (
-        <div className="container ">
-
-            <div>{operation}</div>
-            {renderButton(BTN)}
-        </div>
+        <>
+            <div className="container ">
+                <Title />
+                <CalculatorElement>
+                    <div>{operation}</div>
+                    <NumKeypad>
+                        {renderButton(BTN)}
+                    </NumKeypad>
+                </CalculatorElement>
+            </div>
+            <Credits />
+        </>
     );
 }
 
