@@ -19,6 +19,7 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
+
     switch (action.type) {
         case SET_NUMBER:
             const { value } = action;
@@ -32,10 +33,18 @@ const reducer = (state, action) => {
                 operation: state.operation + action.type,
             };
         case EQUAL:
-            return {
-                ...state,
-                operation: eval(state.operation),
-            };
+            try {
+                return {
+                    ...state,
+                    operation: eval(state.operation),
+                };
+            } catch (e) {
+                alert("ERROR");
+            } finally {
+                return {
+                    operation: "",
+                };
+            }
         case RESET:
             return {
                 ...state,
@@ -45,6 +54,7 @@ const reducer = (state, action) => {
             return state;
     }
 };
+
 
 function Calculator(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
