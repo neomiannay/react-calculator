@@ -4,6 +4,7 @@ import Title from './Title';
 import Bouton from './Bouton';
 import { CalculatorElement, NumKeypad } from '../Styles/Calculator';
 import Credits from './Credits';
+import { OutputElement } from '../Styles/Output';
 
 const ADD = "+";
 const MINUS = "-";
@@ -73,7 +74,7 @@ function Calculator(props) {
             <div className="container ">
                 <Title />
                 <CalculatorElement>
-                    <div>{operation}</div>
+                    <OutputElement>{operation}</OutputElement>
                     <NumKeypad>
                         {renderButton(BTN)}
                     </NumKeypad>
